@@ -1,4 +1,4 @@
-RETAIL WORKFORCE SCHEDULER
+RETAIL WORKFORCE SCHEDULER PROJECT
 
 Files:
 1. index.html  - page structure and forms
