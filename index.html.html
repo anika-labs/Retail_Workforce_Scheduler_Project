@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retail Workforce Scheduler</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="top-header">
+        <div>
+            <h1>Retail Workforce Scheduler</h1>
+            <p>Manage employees, shifts and daily store staffing.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="summary-grid">
+            <div class="summary-card">
+                <h3>Total Employees</h3>
+                <p id="totalEmployees">0</p>
+            </div>
+            <div class="summary-card">
+                <h3>Total Shifts</h3>
+                <p id="totalShifts">0</p>
+            </div>
+            <div class="summary-card">
+                <h3>Assigned Shifts</h3>
+                <p id="assignedShifts">0</p>
+            </div>
+            <div class="summary-card">
+                <h3>Unassigned Shifts</h3>
+                <p id="unassignedShifts">0</p>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Add Employee</h2>
+            <form id="employeeForm" class="form-grid">
+                <input type="text" id="employeeName" placeholder="Employee name" required>
+                <input type="text" id="employeeRole" placeholder="Role (e.g. Cashier)" required>
+                <input type="text" id="employeeAvailability" placeholder="Available days (e.g. Mon, Tue, Fri)" required>
+                <button type="submit">Add Employee</button>
+            </form>
+            <h3>Employee Profiles</h3>
+            <div id="employeeList" class="item-list"></div>
+        </section>
+
+        <section class="panel">
+            <h2>Create Shift</h2>
+            <form id="shiftForm" class="form-grid">
+                <input type="text" id="shiftName" placeholder="Shift name (e.g. Morning)" required>
+                <input type="date" id="shiftDate" required>
+                <label class="time-field">Start time <input type="time" id="startTime" required></label>
+                <label class="time-field">End time <input type="time" id="endTime" required></label>
+                <input type="number" id="requiredStaff" min="1" value="1" required title="Required staff">
+                <button type="submit">Create Shift</button>
+            </form>
+            <p class="hint">Enter the number of employees needed for each shift.</p>
+        </section>
+
+        <section class="panel">
+            <h2>Assign Employee to Shift</h2>
+            <form id="assignmentForm" class="form-grid">
+                <select id="employeeSelect" required>
+                    <option value="">Select employee</option>
+                </select>
+                <select id="shiftSelect" required>
+                    <option value="">Select shift</option>
+                </select>
+                <button type="submit">Assign Employee</button>
+            </form>
+            <p id="message" class="message" aria-live="polite"></p>
+        </section>
+
+        <section class="panel">
+            <div class="section-heading">
+                <h2>Daily Schedule</h2>
+                <label>Choose date <input type="date" id="scheduleDate"></label>
+            </div>
+            <div id="scheduleList" class="item-list"></div>
+        </section>
+    </main>
+
+    <footer>Retail Workforce Scheduler | Student Project</footer>
+    <script src="script.js"></script>
+</body>
+</html>
