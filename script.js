@@ -273,4 +273,4 @@ function renderAll() {
 document.getElementById("scheduleDate").addEventListener("change", renderSchedule);
 
 // Display saved data when the page opens.
-renderAll();  // Person 3 Anika 
+renderAll();  // Person 3 Anika
